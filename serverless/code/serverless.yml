@@ -1,0 +1,14 @@
+service: joseph-functions 
+
+
+provider:
+  name: aws
+  runtime: python3.6
+
+
+
+functions:
+  hello:
+    handler: handler.layers_test
+    layers:
+      - ${cf:joseph-layers-dev.MyFirstLayerExport}

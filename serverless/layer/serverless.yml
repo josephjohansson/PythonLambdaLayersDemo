@@ -1,0 +1,19 @@
+provider:
+  name: aws
+  runtime: python3.6
+
+
+layers:
+  myfirstlayer:
+    path: myfirstlayer
+    compatibleRuntimes:
+        - python3.6
+
+
+resources:
+  Outputs:
+    MyFirstLayerExport:
+        Value:
+          Ref: MyfirstlayerLambdaLayer
+        Export:
+          Name: MyfirstlayerLambdaLayer
